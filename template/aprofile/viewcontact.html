@@ -1,0 +1,47 @@
+{% extends "base2.html"  %}
+{% block title %}
+contact
+      {% endblock title %}
+
+{% block body %}
+<div class="container-fluid">
+      <div class="container">
+
+<h1>View Contact</h1>
+
+
+
+ <table class="table table-hover ">
+  <thead>
+    <tr>
+
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile No.</th>
+          <th scope="col">Message</th>
+      <th scope="col">Date</th>
+
+
+	   </tr>
+  </thead>
+  <tbody>
+  {% for i in allpost %}
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.mobile}}</td>
+          <td>{{i.message}}</td>
+          <td>{{i.date}}</td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+
+
+
+            </div>
+</div>
+{% endblock body %}
+

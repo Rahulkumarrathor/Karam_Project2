@@ -1,0 +1,50 @@
+{% extends "base2.html"  %}
+{% block title %}
+contact
+      {% endblock title %}
+
+{% block body %}
+<div class="container-fluid">
+      <div class="container">
+          <div class="row">
+    <div class="col-sm-6 mx-auto bg-light my-5 p-6">
+<h1>Add Jobs</h1>
+          <form action="/addjob/" method="post">
+    {% csrf_token %}
+
+            <div class="mb-3">
+  <label for="exampleFormControlInput12"  class="form-label">Job Title</label>
+  <input type="text" name="jobtitle" class="form-control" id="exampleFormControlInput12" placeholder="Enter job title" required>
+</div>
+            <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Salary</label>
+  <input type="number" class="form-control"  name="salary" id="exampleFormControlInput1" placeholder=" Enter the salary"  required >
+</div>
+    <div class="mb-3">
+          Experience
+ <select class="form-select" name="experience" aria-label="Default select example"  required >
+  <option selected ></option>
+  <option >One Year</option>
+  <option >Two Year</option>
+  <option >Three Year</option>
+   <option>Four Year</option>
+  <option>Five  Year</option>
+ </select></div>
+
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Location</label>
+  <textarea class="form-control" name="location" id="exampleFormControlTextarea1" placeholder="Enter the location" rows="3"  required></textarea>
+</div>
+
+
+
+  <input type="submit" class="btn btn-primary m-2 px-3" value="Add Job">
+
+          </form>
+    </div>
+          </div>
+      </div>
+</div>
+{% endblock body %}
+

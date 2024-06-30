@@ -1,0 +1,47 @@
+{% extends "base2.html"  %}
+{% block title %}
+ADD Notification
+      {% endblock title %}
+
+{% block body %}
+<div class="container-fluid">
+      <div class="container my-5">
+<h1>Add Notification</h1>
+          <!---form --start--->
+          <form action="/addnotification/" method="post">
+    {% csrf_token %}
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Notification</label>
+  <textarea class="form-control" name="notification"  id="exampleFormControlTextarea1" placeholder="Enter the Notification" rows="3" required></textarea>
+</div><input type="submit" class="btn btn-primary mx-2 px-5" value="Add">
+          </form>
+<!---form--end-->
+
+      </div>
+    <hr>
+    <div class="container">
+<table class="table table-hover ">
+  <thead>
+    <tr>
+
+      <th scope="col">ID</th>
+      <th scope="col">Notification</th>
+
+      <th scope="col">Date</th>
+      </tr>
+  </thead>
+  <tbody>
+  {% for i in noti %}
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.notification}}</td>
+
+          <td>{{i.date}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+    </div>
+</div>
+{% endblock body %}

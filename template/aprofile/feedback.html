@@ -1,0 +1,35 @@
+{% extends "base3.html"  %}
+{% block title %}
+feedback Page
+      {% endblock title %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="container">
+             <div class="row">
+    <div class="col-sm-6 mx-auto bg-light my-5">
+    <h1 class="text-center">Feedback</h1>
+<form action="/feedback/" method="post" autocomplete="on">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail14" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail14"  name="name" aria-describedby="emailHelp"   autocomplete="on"   required>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail11" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail11"  name="email" aria-describedby="emailHelp" autocomplete="on" required>
+  </div>
+      <div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" aria-required="true" name="feedback" id="floatingTextarea" required></textarea>
+  <label for="floatingTextarea">Enter The Feedback</label>
+</div>
+<br>
+  <input type="submit" class="btn btn-primary m-3 px-3 "  value="Send">
+</form>
+    </div>
+    </div>
+        </div>
+</div>
+
+{% endblock body %}

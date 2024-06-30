@@ -1,0 +1,79 @@
+{% extends "base.html"  %}
+{% block title %}
+contact page
+      {% endblock title %}
+
+{% block body %}
+
+
+
+
+<div class="container-fluid bg-light">
+    <div class="container">
+         <div class="row">
+    <div class="col-sm-6 bg-light ">
+      {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+
+        <strong>Results</strong>{{message}} Username {{request.user}}
+            </div>
+        {%  endfor %}
+
+        <h1 class="text-center">Contact Form </h1><hr>
+<form action="/contact/" method="post" autocomplete="on">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail14" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail14"  name="name" aria-describedby="emailHelp"   autocomplete="on"   required>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail11" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail11"  name="email" aria-describedby="emailHelp" autocomplete="on" required>
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputEmail17" class="form-label">Mobile</label>
+    <input type="number" class="form-control" aria-required="true" id="exampleInputEmail17" name="mobile" aria-describedby="emailHelp"   autocomplete="on" required>
+  </div>
+
+
+   <div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" aria-required="true" name="comment" id="floatingTextarea" required></textarea>
+  <label for="floatingTextarea">Message</label>
+</div>
+<br>
+  <input type="submit" class="btn btn-primary m-2 px-3 "  value="SAVE">
+</form>
+
+
+    </div>
+              <div class="col-sm-6 bg-light p-5" >
+                  <h1 class="text-center mt-3">Corporate  Office</h1><hr>
+                   <p> <h3><a href="#" class="btn btn-primary m-1"><i class="bi bi-envelope-open-fill"></i></a>
+                    karam@karam.in</h3>
+                   </p>
+                   <p><h3><a href="#" class="btn btn-primary m-1"><i class="bi bi-telephone-fill"></i></a>
+                  +91 120 4734400</h3>
+                   </p>
+                   <p> <h3><a href="#" class="btn btn-primary m-1"><i class="bi bi-house-door-fill"></i></a>
+                                                  D-95, Sector-2, Noida, Uttar Pradesh -283203</h3>
+                   </p>
+              </div>
+         </div>
+    </div>
+        </div>
+
+
+<!---map--atart-->
+<div class="container-fluid ">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.5724860196133!2d77.31478531549455!3d28.5825976930892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce4596b508879%3A0x582c48076ed8c14b!2sKaram+Industries!5e0!3m2!1sen!2sin!4v1558072350582!5m2!1sen!2sin"
+          width="100%"  height="300px"  frameborder="0" style="border:0" allowfullscreen=""></iframe>
+
+
+
+
+
+
+</div>
+<!--map--end-->
+{% endblock body %}
